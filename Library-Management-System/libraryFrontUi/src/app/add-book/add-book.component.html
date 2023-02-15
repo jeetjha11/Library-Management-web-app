@@ -1,0 +1,44 @@
+
+<div  style="padding: 15px;">
+    <mat-card class="container ">
+      <div class="innerContainer bg-slate-300" style="border-radius: 3px;">
+        <h1 mat-dialog-title>Please Fill Book Information</h1>
+        <div mat-dialog-content style="justify-content: center;">
+          <div>
+            <form [formGroup]="bookFormData" (ngSubmit)="bookData()">
+                <!-- <input class="ng-hide" id="input-file-id"  type="file" />
+                <button mat-raised-button color="accent" (click)="uploadBookPic()" >Upload</button> -->
+
+              <mat-form-field style="width: 100%;" >
+                <input matInput placeholder="Book Name" required formControlName="bookName">
+                <mat-error *ngIf="bookName?.errors?.['required']">
+                  Book Name is required.
+                </mat-error>
+              </mat-form-field><br>
+
+              <mat-form-field style="width: 100%;">
+                <input matInput placeholder="Enter Author Name"  required
+                  formControlName="author">
+                <mat-error *ngIf="author?.errors?.['required']">
+                  Author is required.
+                </mat-error>
+              </mat-form-field><br>
+
+              <mat-form-field style="width: 100%;">
+                <input matInput placeholder="Enter Genre"  required
+                  formControlName="genre">
+                <mat-error *ngIf="genre?.errors?.['required']">
+                  Genre is required.
+                </mat-error>
+              </mat-form-field><br>
+              <br>
+              
+              <button color="warn" mat-button mat-raised-button type="reset">Reset</button>&nbsp;&nbsp;
+              <button mat-raised-button [disabled]="bookFormData.invalid" [mat-dialog-close]="bookFormData.value"
+                color="accent">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>

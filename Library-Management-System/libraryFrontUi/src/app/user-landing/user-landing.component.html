@@ -1,0 +1,85 @@
+<div>
+
+    <h1 align="center">Welcome to the library</h1>
+
+
+
+    <!-- <mat-form-field class="example-form-field">
+            <mat-label>Search</mat-label>
+            <input matInput type="text">
+            <button matSuffix class="ml-3 mr-3">
+                <mat-icon>search</mat-icon>
+            </button>
+
+        </mat-form-field> -->
+    <!-- <button matSuffix class="mr-3 bg-slate ml-4">
+            <mat-icon>list</mat-icon>
+        </button> -->
+
+
+    <div align="end" class="ml-10 mr-10">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>search</mat-icon>
+
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="searchByBookName()">
+                <mat-icon>search</mat-icon>
+                <span>Search By Book Name</span>
+            </button>
+            <button type="button" mat-menu-item (click)="searchByBookAuthor()">
+                <mat-icon>search</mat-icon>
+                <span>Search by book author</span>
+            </button>
+            <button type="button" mat-menu-item (click)="searchByBookGenre()">
+                <mat-icon>search</mat-icon>
+                <span>Search by book genre</span>
+            </button>
+        </mat-menu>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <div class="flex mt-20 justify-between  flex-col md:flex-row gap-3  flex-wrap p-10">
+
+        <mat-card class="example-card shadow-2xl " *ngFor="let book of books">
+            <mat-card-header>
+                <mat-card-title-group>
+                    <mat-card-title>{{book.bookName}}</mat-card-title>
+                    <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
+                    <mat-card-subtitle>{{book.genre}}</mat-card-subtitle>
+                    <img mat-card-lg-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+                </mat-card-title-group>
+            </mat-card-header>
+            <div class="flex">
+            <button mat-button color="primary" (click)="issueBook(book)">Issue</button>
+            <button mat-button color="primary">See Details</button>
+            </div>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="flex mt-20 justify-between  flex-col md:flex-row gap-3  flex-wrap p-10">
+
+    <mat-card class="example-card shadow-2xl " *ngFor="let book of books">
+        <mat-card-header>
+            <mat-card-title-group>
+                <mat-card-title>{{book.bookName}}</mat-card-title>
+                <mat-card-subtitle>{{book.BookGenre}}</mat-card-subtitle>
+                <mat-card-subtitle>{{book.IssuedDate}}</mat-card-subtitle>
+                <mat-card-subtitle>{{book.SubmissionDate}}</mat-card-subtitle>
+                <img mat-card-lg-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+            </mat-card-title-group>
+        </mat-card-header>
+        <div class="flex">
+        <button mat-button color="primary" (click)="submitBook(book)">Submit</button>
+       
+        </div>
+    </mat-card>
+</div>

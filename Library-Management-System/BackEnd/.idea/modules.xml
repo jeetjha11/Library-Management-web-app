@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/BackEnd.iml" filepath="$PROJECT_DIR$/.idea/BackEnd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/authentication/authentication.iml" filepath="$PROJECT_DIR$/library/authentication/authentication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/libraryManagementGateway/libraryManagementGateway.iml" filepath="$PROJECT_DIR$/library/libraryManagementGateway/libraryManagementGateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/librarymanagementbackend/librarymanagementbackend.iml" filepath="$PROJECT_DIR$/library/librarymanagementbackend/librarymanagementbackend.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,23 @@
+<div  style="padding: 15px;">
+    <mat-card class="container ">
+      <div class="innerContainer bg-slate-300" style="border-radius: 3px;">
+        <h1 mat-dialog-title>Please Fill Information</h1>
+        <div mat-dialog-content style="justify-content: center;">
+          <div>
+            <form [formGroup]="bookData" (ngSubmit)="bookDataValue()">
+              <mat-form-field style="width: 100%;" >
+                <input matInput placeholder="Search" required formControlName="bookName">
+                <mat-error *ngIf="bookName?.errors?.['required']">
+                  BookName is required
+                </mat-error>
+              </mat-form-field><br>
+              
+              <button color="warn" mat-button mat-raised-button type="reset">Reset</button>&nbsp;&nbsp;
+              <button mat-raised-button [disabled]="bookData.invalid" [mat-dialog-close]="bookData.value"
+                color="accent">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>

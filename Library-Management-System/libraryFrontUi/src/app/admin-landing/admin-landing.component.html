@@ -1,0 +1,31 @@
+<div class="flex mt-20 justify-between  flex-col md:flex-row gap-3  flex-wrap p-10">
+  <mat-card class="example-card shadow-2xl " *ngFor="let book of bookDetails">
+    <mat-card-header>
+      <mat-card-title-group>
+        <div>
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_horiz</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button type="button" mat-menu-item (click)="editBookDetails(book)">
+              <mat-icon>edit</mat-icon>
+              <span>Edit Book Details</span>
+            </button>
+            <button type="button" mat-menu-item (click)="deleteBook(book.bookId)">
+              <mat-icon>delete</mat-icon>
+              <span>Delete Book</span>
+            </button>
+          </mat-menu>
+        </div>
+        <mat-card-title>{{book.bookName}}</mat-card-title>
+        <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
+        <mat-card-subtitle>{{book.genre}}</mat-card-subtitle>
+
+        <img mat-card-lg-image src="{{ 'data:image/png;base64,' + book?.bookImage?.data }}" alt="Upload Book Image">
+      </mat-card-title-group>
+    </mat-card-header>
+    <div class="flex">
+      <input type="file" name="bookImage" (change)="uploadBookImage($event,book.bookId)">
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,25 @@
+<div class="flex flex-row justify-between items-center space-x-2 bg-slate-400 z-50 h-full p-3">
+    <div class="flex space-x-4 items-center p-1">
+        <a href="">
+            <h1>Library </h1>
+        </a>
+    </div>
+    <div class="flex space-x-4 items-center">
+        <button class="p-1 " routerLink="/profile">
+            <mat-icon class="hover:text-violet-700 text-white " >account_circle</mat-icon>
+        </button>
+        <a>
+            <mat-icon *ngIf="!isLoggedIn" class="mouse-pointer hover:text-violet-700 text-white mr-20" aria-hidden="false" 
+                fontIcon="login"  [routerLink]="'login'">login</mat-icon>
+        </a>
+        <a>
+            <mat-icon *ngIf="isLoggedIn" class="mouse-pointer hover:text-violet-700  text-white mr-16" aria-hidden="false" 
+                fontIcon="logout"  (click)="logout()">exit_to_app</mat-icon>
+        </a>
+        <!-- <a routerLink="/issuebook">
+            <mat-icon *ngIf="isLoggedIn" class="mouse-pointer hover:text-violet-700  text-white mr-16" aria-hidden="false" 
+                fontIcon="library_add">library_add</mat-icon>
+        </a> -->
+    </div>
+
+</div>
